@@ -53,7 +53,15 @@ router.patch('/:id', (req, res) => {
     data: null,
   });
 });
-
+const Genre = {
+  Fiction: 'Fiction',
+  Mystery: 'Mystery',
+  Romance: 'Romance',
+  Fantasy: 'Fantasy',
+  ScienceFiction: 'Science Fiction',
+  Biography: 'Biography',
+  SelfHelp: 'Self-Help',
+};
 // POST /books - 책을 추가합니다.
 router.post('/', (req, res) => {
   const { title, description, genre, coverImage } = req.body;
@@ -89,5 +97,4 @@ router.post('/', (req, res) => {
   books.push(newBook);
   res.json({ time: new Date().toISOString(), error: null, data: newBook });
 });
-
 export default router;
